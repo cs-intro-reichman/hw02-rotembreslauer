@@ -4,6 +4,23 @@
  */
 public class InOrder {
 	public static void main (String[] args) {
-		//// Write your code here
+	
+	int randomNumber = 0;
+	int randomNumber1 = -1;
+	int n = 1;
+
+	while ( n == 1 ){
+		randomNumber = (int)(Math.random() * 10);
+
+			if (randomNumber >= randomNumber1){
+		     	System.out.print(randomNumber + " ");
+		     	 randomNumber1 =  randomNumber;
+			} else {
+				n = 2;
+			}
+
+	}
+
+
 	}
 }
