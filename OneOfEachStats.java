@@ -8,13 +8,14 @@ import java.util.Random;
 public class OneOfEachStats{
 	public static void main (String[] args) {
 	
-	int T = Integer.parseInt(args[0]);
+		int T = Integer.parseInt(args[0]);
 		int seed = Integer.parseInt(args[1]);
         Random generator = new Random(seed);  
 
         int f2 = 0;
         int f3 = 0;
         int f4 = 0;
+        int moreThen4 = 0;
         String gender1 = "0";
 		String gender2 = "1";
 		boolean flag = true;
@@ -27,7 +28,8 @@ public class OneOfEachStats{
 			double j = generator.nextDouble();
 			counter += 1;
 
-			if(j > 0.5){
+
+			if(j >= 0.5){
 				gender1 = "g";
 			} else {
 				gender1 = "b";
@@ -35,6 +37,12 @@ public class OneOfEachStats{
 
 			if((gender1 != gender2) && (counter > 1)){
 				flag = false;
+			}
+		
+			gender2 = gender1;
+		
+		} while (flag);
+
 
 			if (counter == 2){
 				f2 = f2 + 1;
@@ -43,31 +51,24 @@ public class OneOfEachStats{
 				f3 = f3 +1;
 			  } else { 
 				f4 = f4 +1;
-
-			}
+				moreThen4 = moreThen4 + counter;
 		}
-			}
-			gender2 = gender1;
-
-		} while (flag);
-
 		flag = true;
 		counter = 0;
 		}	
-		
-	
-		double average = (((f2*2) + (f3*3) + (f4*4))/(double) T);
+	}
+
+
+	double average = (((f2*2) + (f3*3) + (moreThen4))/(double) T);
 		String common = "0";
 
 		if ((f2 > f3) && (f2 > f4)){
 		common = "2";
-   		 } else if (f3 > f2 && f3 > f4){
+   		 } else if ((f3 > f2) && (f3 > f4)){
 		common = "3";
 		} else {
 		common = "4 or more";
-	}
-
-
+}
 		System.out.println("Average: " + average + " children to get at least one of each gender.");
 		System.out.println("Number of families with 2 children: " + f2);
 		System.out.println("Number of families with 3 children: " + f3);
