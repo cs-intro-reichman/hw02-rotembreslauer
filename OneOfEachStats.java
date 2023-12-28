@@ -5,7 +5,7 @@ import java.util.Random;
  *  The program expects to get one command-line argument: an int value
  * 	that determines how many families to simulate.
  */
-public class OneOfEachStats {
+public class OneOfEachStats{
 	public static void main (String[] args) {
 	
 	int T = Integer.parseInt(args[0]);
@@ -72,7 +72,7 @@ public class OneOfEachStats {
 		System.out.println("Number of families with 2 children: " + f2);
 		System.out.println("Number of families with 3 children: " + f3);
 		System.out.println("Number of families with 4 or more children: " + f4);
-		System.out.println("The most common number of children is " + common);		
+		System.out.println("The most common number of children is " + common + ".");		
 	}
 }
 
