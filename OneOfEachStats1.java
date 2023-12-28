@@ -1,3 +1,4 @@
+import java.util.Random;
 /**
  *  Computes some statistics about families in which the parents decide 
  *  to have children until they have at least one child of each gender.
@@ -23,7 +24,7 @@ public class OneOfEachStats1 {
         for(int i = 0; i < T ; i ++){
 
 		do{
-			double j = Math.random();
+			double j = generator.nextDouble();
 			counter += 1;
 
 			if(j > 0.5){
