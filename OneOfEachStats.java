@@ -10,7 +10,7 @@ public class OneOfEachStats{
 	
 		int T = Integer.parseInt(args[0]);
 		int seed = Integer.parseInt(args[1]);
-        Random generator = new Random(seed);  
+         
 
         int f2 = 0;
         int f3 = 0;
@@ -23,6 +23,8 @@ public class OneOfEachStats{
 
 
         for(int i = 0; i < T ; i ++){
+
+        		Random generator = new Random(seed); 
 
 		do{
 			double j = generator.nextDouble();
