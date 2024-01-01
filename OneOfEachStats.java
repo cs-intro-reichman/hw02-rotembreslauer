@@ -20,8 +20,6 @@ public class OneOfEachStats{
 			
 		do{
 				double j = generator.nextDouble();
-			
-
 			if(j >= 0.5){
 				gender1 = "g";
 			} else {
